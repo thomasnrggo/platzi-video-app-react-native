@@ -10,6 +10,7 @@ import Header from './sections/components/header';
 import SuggestionList from './videos/containers/suggestion-list';
 import CategoryList from './videos/containers/category-list.js';
 import Movie from './screens/containers/movie';
+import Search from './sections/containers/search'
 
 
 
@@ -37,7 +38,7 @@ class AppLayout extends Component {
     return (
       <Home>
         <Header />
-
+        <Search />
         <Text>buscador</Text>
         <CategoryList />
         <SuggestionList />
