@@ -4,6 +4,7 @@ import {
   Text,
   StyleSheet,
   Image,
+  StatusBar,
 } from 'react-native';
 
 class About extends Component {
@@ -11,6 +12,15 @@ class About extends Component {
     return {
       title: 'Acerca de',
     }
+  }
+  componentDidMount() {
+    this.focus = this.props.navigation.addListener('didFocus', () => {
+      StatusBar.setBarStyle('light-content');
+      StatusBar.setBackgroundColor('#022c43');
+    });
+  }
+  componentWillUnmount() {
+    this.focus.remove();
   }
   render() {
     return (

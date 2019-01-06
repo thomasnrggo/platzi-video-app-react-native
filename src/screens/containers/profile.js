@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   StyleSheet,
   Button,
+  StatusBar,
 } from 'react-native';
 import { connect } from 'react-redux';
 
@@ -13,6 +14,15 @@ class Profile extends Component {
     return {
       title: 'Perfil',
     }
+  }
+  componentDidMount() {
+    this.focus = this.props.navigation.addListener(
+      'didFocus',
+      StatusBar.setBarStyle('dark-content'),
+    )
+  }
+  componentWillUnmount() {
+    this.focus.remove();
   }
   render() {
     return (

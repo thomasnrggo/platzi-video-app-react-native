@@ -13,6 +13,15 @@ class Lucky extends Component {
       title: 'voy a tener suerte',
     }
   }
+  componentDidMount() {
+    this.focus = this.props.navigation.addListener(
+      'didFocus',
+      StatusBar.setBarStyle('dark-content'),
+    )
+  }
+  componentWillUnmount() {
+    this.focus.remove();
+  }
   render() {
     return (
       <View style={styles.container}>
