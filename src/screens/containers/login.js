@@ -18,7 +18,7 @@ class Login extends Component {
       type: 'SET_USER',
       payload: {
         token,
-        username: 'LeonidasEsteban'
+        username: 'thomasnrg'
       }
     })
     this.props.navigation.navigate('Loading');
