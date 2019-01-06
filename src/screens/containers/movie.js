@@ -31,7 +31,6 @@ class Movie extends Component {
   render() {
     return (
       <MovieLayout>
-        <Player />
         <Detail {...this.props.movie} />
       </MovieLayout>
     );

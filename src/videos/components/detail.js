@@ -33,6 +33,12 @@ const makeHTML = (id) => {
 
 const Detail = (props) => (
   <ScrollView style={styles.container}>
+
+    <View style={styles.trailer}>
+      <WebView
+        source={{html: makeHTML(props.yt_trailer_code)}}
+      />
+    </View>
     <View style={styles.top}>
       <Text>{props.title}</Text>
     </View>
@@ -47,11 +53,7 @@ const Detail = (props) => (
         <Text style={styles.description}>{props.description_full}</Text>
       </View>
     </View>
-    <View style={styles.trailer}>
-      <WebView
-        source={{html: makeHTML(props.yt_trailer_code)}}
-      />
-    </View>
+
   </ScrollView>
 );
 
