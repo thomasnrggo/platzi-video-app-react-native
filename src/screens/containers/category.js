@@ -9,6 +9,9 @@ import Separator from '../../sections/components/vertical-separator';
 import Suggestion from '../../videos/components/suggestion';
 import { connect } from 'react-redux';
 import { NavigationActions } from 'react-navigation';
+import Header from '../../sections/components/header'
+import Close from '../../sections/components/close'
+import { HeaderBackButton } from'react-navigation'
 
 function mapStateToProps(state) {
   return {
@@ -17,6 +20,17 @@ function mapStateToProps(state) {
 }
 
 class Category extends Component {
+  static navigationOptions = ({navigation}) => {
+    return {
+        header: (
+          <Header>
+            <Close
+              onPress={()=>{navigation.goBack()}}
+            />
+          </Header>
+        )
+      }
+  }
   keyExtractor = item => item.id.toString()
   renderEmtpy = () => <Empty text="No hay sugerencias :(" />
   itemSeparator = () => <Separator />
