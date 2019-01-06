@@ -19,6 +19,7 @@ const AppWithNavigationState = connect(mapStateToProps)(AppRoot);
 type Props = {};
 export default class App extends Component<Props> {
   render() {
+    console.disableYellowBox = true;
     return (
       <Provider
         store={store}

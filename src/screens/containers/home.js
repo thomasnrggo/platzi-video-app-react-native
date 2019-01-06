@@ -14,7 +14,7 @@ import Search from '../../sections/containers/search'
 class Home extends Component {
   static navigationOptions = () => {
     return {
-      header: Header
+      header: Header,
     };
   }
   async componentDidMount() {
