@@ -8,11 +8,6 @@ import {
   createNavigationReducer,
 } from 'react-navigation-redux-helpers';
 
-// const store = createStore(reducer, {
-//   suggestionList: [],
-//   categoryList: [],
-// })
-
 const middleware = createReactNavigationReduxMiddleware(
   "root",
   state => state.navigation,
@@ -21,7 +16,7 @@ const middleware = createReactNavigationReduxMiddleware(
 const persistConfig = {
   key: 'root',
   storage,
-  blacklist: ['selectedMovie']
+  blacklist: ['navigation']
 }
 
 

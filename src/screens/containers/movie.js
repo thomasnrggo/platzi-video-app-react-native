@@ -9,6 +9,17 @@ import Detail from '../../videos/components/detail'
 
 
 class Movie extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      header: (
+        <Header>
+          <Close
+            onPress={()=>{navigation.goBack()}}
+          />
+        </Header>
+      )
+    }
+  }
   closeMovie = (props) => {
     this.props.dispatch({
       type: 'SET_SELECTED_MOVIE',
@@ -20,11 +31,6 @@ class Movie extends Component {
   render() {
     return (
       <MovieLayout>
-        <Header>
-          <Close
-            onPress={this.closeMovie}
-          />
-        </Header>
         <Player />
         <Detail {...this.props.movie} />
       </MovieLayout>
@@ -34,7 +40,7 @@ class Movie extends Component {
 
 function mapStateToProps(state) {
   return {
-    movie: state.selectedMovie,
+    movie: state.video.selectedMovie,
   };
 }
 
