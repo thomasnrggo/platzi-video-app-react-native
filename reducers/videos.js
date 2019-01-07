@@ -3,6 +3,9 @@ function videos(state = {}, action) {
     case 'SET_SEGGESTION_LIST': {
       return {...state, ...action.payload}
     }
+    case 'SEARCH_LIST': {
+      return {...state, ...action.payload}
+    }
     case 'SET_CATEGORY_LIST': {
       return {...state, ...action.payload}
     }

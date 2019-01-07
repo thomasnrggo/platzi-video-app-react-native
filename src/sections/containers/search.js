@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux'
 import API from '../../../utils/api'
+import { NavigationActions } from 'react-navigation'
 
  class Search extends Component {
   state = {
@@ -14,11 +15,17 @@ import API from '../../../utils/api'
     const movies = await API.searchMovie(this.state.text)
     console.log(movies);
     this.props.dispatch({
-      type: 'SET_SEGGESTION_LIST',
+      type: 'SEARCH_LIST',
       payload: {
-        suggestionList: movies
+        // suggestionList: movies
+        searchList: movies
       }
     })
+    this.props.dispatch(
+      NavigationActions.navigate({
+        routeName: 'Search',
+      })
+    )
   }
   handleChangeText = (text) => {
     this.setState({

@@ -7,6 +7,7 @@ import {
 import Home from './screens/containers/home'
 import Movie from './screens/containers/movie'
 import Category from './screens/containers/category'
+import Search from './screens/containers/search'
 import Header from './sections/components/header'
 import About from './screens/containers/about'
 import Lucky from './screens/containers/lucky'
@@ -20,6 +21,7 @@ const Main = createStackNavigator(
     Home: Home,
     Movie: Movie,
     Category,
+    Search,
   },
   {
     defaultNavigationOptions: {
