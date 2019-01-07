@@ -12,7 +12,7 @@ class Api {
     return data.movies
   }
   async searchMovie(title) {
-    const query = await fetch(`${BASE_API}list_movies.json?limit=5&sort_by=rating&query_term=${title}`);
+    const query = await fetch(`${BASE_API}list_movies.json?limit=10&sort_by=rating&query_term=${title}`);
     const { data } = await query.json();
     return data.movies
   }
